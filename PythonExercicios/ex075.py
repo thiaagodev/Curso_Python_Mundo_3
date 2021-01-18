@@ -1,9 +1,4 @@
-n1 = int(input('Digite um número: '))
-n2 = int(input('Digite outro: '))
-n3 = int(input('Digite outro: '))
-n4 = int(input('Digite outro: '))
-
-tupla = (n1, n2, n3, n4)
+tupla = (int(input('Digite um número: ')), int(input('Digite outro: ')), int(input('Digite outro: ')), int(input('Digite outro: ')))
 
 print(f'O número 9 apareceu {tupla.count(9)} vezes')
 
@@ -16,5 +11,4 @@ print('Números pares: ', end='')
 
 for num in tupla:
     if num % 2 == 0:
-        print(num, end=', ')
-
+        print(num, end=' ')
