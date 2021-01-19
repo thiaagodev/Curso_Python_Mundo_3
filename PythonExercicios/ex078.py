@@ -1,7 +1,7 @@
 valores = []
 
 for i in range(0, 5):
-    valores.append(int(input(f'Digite o {i + 1}° valor: ')))
+    valores.append(int(input(f'Digite o valor da posição {i}: ')))
 
 print(f'O maior valor foi {max(valores)} e está nas posições ', end='')
 if valores.count(max(valores)) > 1: 
