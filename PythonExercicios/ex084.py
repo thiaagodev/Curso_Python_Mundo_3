@@ -6,7 +6,7 @@ pessoas_mais_leves = []
 
 while True:
     dados.append(input('Nome: '))
-    dados.append(int(input('Peso: ')))
+    dados.append(float(input('Peso: ')))
     pessoas.append(dados[:])
     total_pessoas += 1  
 

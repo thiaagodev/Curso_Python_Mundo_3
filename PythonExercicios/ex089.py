@@ -22,7 +22,7 @@ print('-'*20)
 for pos, aluno in enumerate(alunos):
     print(pos, end='   ')
     print(aluno[0], end='     ')
-    print(f'  {(aluno[1][0] + aluno[1][1]) / 2:4>}')
+    print(f'  {(aluno[1][0] + aluno[1][1]) / 2:>20}')
 
 num_aluno = -1
 while num_aluno != 999:

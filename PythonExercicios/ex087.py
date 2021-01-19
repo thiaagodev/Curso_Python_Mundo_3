@@ -1,31 +1,20 @@
-matriz = [[], [], []]
+matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 valores_pares = valores_terceira_coluna = maior_valor_segunda_linha = 0
 
-matriz[0].append(int((input('Digite um valor para [0, 0]: '))))
-matriz[0].append(int((input('Digite um valor para [0, 1]: '))))
-matriz[0].append(int((input('Digite um valor para [0, 2]: '))))
-
-matriz[1].append(int((input('Digite um valor para [1, 0]: '))))
-matriz[1].append(int((input('Digite um valor para [1, 1]: '))))
-matriz[1].append(int((input('Digite um valor para [1, 2]: '))))
-
-matriz[2].append(int((input('Digite um valor para [2, 0]: '))))
-matriz[2].append(int((input('Digite um valor para [2, 1]: '))))
-matriz[2].append(int((input('Digite um valor para [2, 2]: '))))
+for i in range(0, 3):
+    for c in range(0, 3):
+        matriz[i][c] = int(input(f'Digite um valor na posição [{i}, {c}]: '))
 
 print('-='*40)
 
 for linha in matriz:
     for valor in linha:
-        print(f'[ {valor} ]', end=' ')
+        print(f'[ {valor:^5} ]', end=' ')
+        if valor % 2 == 0:
+            valores_pares += valor
     print()
 
 print('-='*40)
-
-for linha in matriz:
-    for valor in linha:
-        if valor % 2 == 0:
-            valores_pares += valor
 
 for linha in matriz:
     for pos, valor in enumerate(linha):
