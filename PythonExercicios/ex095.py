@@ -23,12 +23,22 @@ while True:
         break
 
 print('-='*40)
-print('cod  nome                   gols      total')
+print('cod  nome                   gols    total')
 print('-='*30)
 
 for pos, jogador in enumerate(jogadores):
     print(f'{pos:>3}', end=' ')
     print(f'{jogador["nome"]:<25}', end=' ')
     print(f'{jogador["gols"]:}', end='   ')
-    print(f'{jogador["total"]}', end=' ')
+    print(f'{jogador["total"]:>6}', end=' ')
     print()
+
+cod_jogador = -1
+
+while cod_jogador != 999:
+    cod_jogador = int(input('Deseja ver as informações de qual jogador? (999 encerra o programa): '))
+    if cod_jogador > len(jogadores) - 1:
+        print('Esse jogador não existe!')
+    else:
+        for pos, gols in enumerate(jogadores[cod_jogador]['gols']):
+            print(f'Na {pos + 1}° partida ele marcou {gols} gols')
