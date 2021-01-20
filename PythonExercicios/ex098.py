@@ -7,7 +7,7 @@ def contador(inicio, fim, passo = 1):
         passo = -1
     
     for i in range(inicio, fim, passo):
-        print(f'{i} ', end='')
+        print(i, end=' ', flush=True)
         sleep(0.5)
     print('FIM!')
 
