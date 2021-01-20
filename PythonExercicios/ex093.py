@@ -10,7 +10,7 @@ for i in range(0, partidas):
     gols.append(gols_marcados)
     total_gols += gols_marcados
 
-jogador['gols'] = gols
+jogador['gols'] = gols[:]
 jogador['total'] = total_gols
 
 print('-='*50)

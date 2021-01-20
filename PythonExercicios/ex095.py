@@ -29,8 +29,8 @@ print('-='*30)
 for pos, jogador in enumerate(jogadores):
     print(f'{pos:>3}', end=' ')
     print(f'{jogador["nome"]:<25}', end=' ')
-    print(f'{jogador["gols"]:}', end='   ')
-    print(f'{jogador["total"]:>6}', end=' ')
+    print(f'{jogador["gols"]}', end='')
+    print(f'{jogador["total"]:>20}', end=' ')
     print()
 
 cod_jogador = -1

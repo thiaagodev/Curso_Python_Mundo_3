@@ -1,43 +1,23 @@
 from random import randint
 from time import sleep
+from operator import itemgetter
 
-jogador1 = {'nome': 'jogador1', 'jogada': randint(1, 6)}
-jogador2 = {'nome': 'jogador2', 'jogada': randint(1, 6)}
-jogador3 = {'nome': 'jogador3', 'jogada': randint(1, 6)}
-jogador4 = {'nome': 'jogador4', 'jogada': randint(1, 6)}
-jogadores = [jogador1, jogador2, jogador3, jogador4]
-jogadas = []
+jogo = {
+    'jogador1': randint(1, 6),
+    'jogador2': randint(1, 6),
+    'jogador3': randint(1, 6),
+    'jogador4': randint(1, 6)
+}
+ranking = {}
 
 print('Valores sorteados: ')
 
-for jogador in jogadores:
-    print(f'   O {jogador["nome"]} tirou {jogador["jogada"]}')
-    jogadas.append(jogador['jogada'])
+for key, value in jogo.items():
+    print(f'{key} tirou {value} no dado.')
     sleep(1)
-
-jogadas.sort(reverse = True)
-
-for jogador in jogadores:
-    if jogador['jogada'] == jogadas[0]:
-        print(f'1° lugar: {jogador["nome"]} com {jogador["jogada"]}')
-        break
-sleep(1)
-
-for jogador in jogadores:
-    if jogador['jogada'] == jogadas[1]:
-        print(f'2° lugar: {jogador["nome"]} com {jogador["jogada"]}')
-        break
-sleep(1)
-
-for jogador in jogadores:
-    if jogador['jogada'] == jogadas[2]:
-        print(f'3° lugar: {jogador["nome"]} com {jogador["jogada"]}')
-        break
-sleep(1)
-
-for jogador in jogadores:
-    if jogador['jogada'] == jogadas[3]:
-        print(f'4° lugar: {jogador["nome"]} com {jogador["jogada"]}')
-        break
-sleep(1)
-
+ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+print('-='*30)
+print('RANKING'.center(30))
+for i, value in enumerate(ranking):
+    print(f'{i + 1}° lugar: {value[0]} com {value[1]}')
+    sleep(0.5)
