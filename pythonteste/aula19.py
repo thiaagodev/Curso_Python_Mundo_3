@@ -23,3 +23,4 @@ for i in range(0, 3):
     brasil.append(estado.copy())
 
 print(brasil)
+#ranking = sorted(jogo.items(), key=itemgetter(1), reverse=True) #Colocar um dicionário em ordem com sorted
