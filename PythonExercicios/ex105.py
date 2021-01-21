@@ -4,25 +4,17 @@ def notas(* notas, sit = False):
         :param notas: Quantas notas quiser
         :return: Dicionário com as informações da turma
     """
-    maior_nota = menor_nota = media_turma = 0
-    total = len(notas)
-    for pos, nota in enumerate(notas):
-        if pos == 0:
-            maior_nota = nota
-            menor_nota = nota
-        if nota > maior_nota:
-            maior_nota = nota
-        elif nota < menor_nota:
-            menor_nota = nota
-        media_turma += nota
+    turma = {}
+    turma['total'] = len(notas)
+    turma['maior'] = max(notas)
+    turma['menor'] = min(notas)
+    turma['média'] = sum(notas) / len(notas)
 
-    media_turma = media_turma / total
-    turma = {'total': total, 'maior': maior_nota, 'menor': menor_nota, 'média': media_turma}
     if sit == True:
-        if media_turma >= 7:
+        if turma['média']  >= 7:
             turma['situação'] = 'BOA'
-        elif media_turma >= 5:
-            turma['situação'] = 'RASOAVEL'
+        elif turma['média']  >= 5:
+            turma['situação'] = 'RAZOÁVEL'
         else:
             turma['situação'] = 'RUIM'
 

@@ -9,17 +9,14 @@ def fatorial(num = 1, show = False):
     """
     result = 0
     f = 1
-    if show:
-        for count in range(num, 0, -1):
-            f *= count
+    for count in range(num, 0, -1):
+        f *= count
+        if show:
             print(count, end=' ')
             if count > 1:
                 print('x', end=' ')
             else:
                 print('=', end=' ')
-    else:
-        for count in range(num, 0, -1):
-            f *= count
     return f
 
 
