@@ -1,4 +1,4 @@
-def metade(num, format = False):
+def metade(num = 0, format = False):
     """
         -> Recebe um número e mostra a metade
         :param num: Número
@@ -10,7 +10,7 @@ def metade(num, format = False):
         return num * 0.5
 
 
-def dobro(num, format = False):
+def dobro(num = 0, format = False):
     """
         -> Recebe um número e mostra o dobro
         :param num: Número
@@ -22,7 +22,7 @@ def dobro(num, format = False):
         return num * 2
 
 
-def aumentar(num, qtd, format = False):
+def aumentar(num = 0, qtd = 0, format = False):
     """
         -> Recebe um número e uma quantidade e mostra a soma
         :param num: Número
@@ -36,7 +36,7 @@ def aumentar(num, qtd, format = False):
         return num + percent
 
 
-def diminuir(num, qtd, format = False):
+def diminuir(num = 0, qtd = 0, format = False):
     """
         -> Recebe um número e uma quantidade e mostra a subtração
         :param num: Número
@@ -50,20 +50,19 @@ def diminuir(num, qtd, format = False):
         return num - percent
 
 
-def resumo(num, qtd_aumentar, qtd_diminuir):
+def resumo(num = 0, qtd_aumentar = 10, qtd_diminuir = 5):
     print('-'*40)
     print('RESUMO DO VALOR'.center(40))
     print('-'*40)
-    print(f'Preço analisado:                {moeda(num)}')
-    print(f'Dobro de preço:                 {dobro(num, True)}')
-    print(f'Metade do preço:                {metade(num, True)}')
-    print(f'{qtd_aumentar}% de aumento:                 {aumentar(num, qtd_aumentar, True)}')
-    print(f'{qtd_aumentar}% de redução:                 {diminuir(num, qtd_diminuir, True)}')
+    print(f'Preço analisado:  \t {moeda(num)}')
+    print(f'Dobro de preço:  \t {dobro(num, True)}')
+    print(f'Metade do preço:  \t {metade(num, True)}')
+    print(f'{qtd_aumentar}% de aumento:  \t {aumentar(num, qtd_aumentar, True)}')
+    print(f'{qtd_diminuir}% de redução:  \t {diminuir(num, qtd_diminuir, True)}')
     print('-'*40)
 
 
-def moeda(dinheiro):
-    dinheiro_formatado = round(dinheiro, 2)
-    return f'R${str(dinheiro_formatado).replace(".", ",")}'
+def moeda(dinheiro = 0, moeda = 'R$'):
+    return f'{moeda}{dinheiro:.2f}'.replace(".", ",")
 
 
