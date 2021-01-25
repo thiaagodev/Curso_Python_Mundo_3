@@ -5,6 +5,5 @@ try:
     x = url.read()
 except Exception as error:
     print('Não consegui acessar o site do Pudim!')
-    print(error)
 else:
     print('Consegui acessar o site do Pudim!')
