@@ -32,4 +32,6 @@ while True:
         usuario.cadastrar(novo_usuario)
     elif opcao == 3:
         break
+    else: 
+        print('ERRO! DIGITE UMA OPÇÃO VÁLIDA!!!')
 
