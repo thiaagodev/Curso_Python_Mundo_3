@@ -5,3 +5,7 @@ Curso de Python do professor Guanabara do Curso em vídeo.
 Minha intenção é aprender e me aperfeiçoar na linguagem Python, deixando todo meu aprendizado registrado aqui no Github.
 
 Curso: https://www.cursoemvideo.com
+
+## CURSO CONCLUÍDO EM 25/01/2021
+
+<img src='./.github/conclusao.png'/>

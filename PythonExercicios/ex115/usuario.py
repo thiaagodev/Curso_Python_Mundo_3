@@ -4,6 +4,7 @@ def cadastrar(usuario):
     try:
         arquivo = open('usuarios.txt', 'a')
         arquivo.write(json.dumps(usuario) + '\n')
+        arquivo.close()
     except Exception as error:
         return error
     else:
@@ -16,6 +17,7 @@ def listar():
         usuarios = []
         for linha in arquivo:
             usuarios.append(json.loads(linha))
+        arquivo.close()
     except Exception as error:
         return error
     else:
@@ -28,20 +30,14 @@ def leiaidade(txt):
         :param txt: pergunta do input
         :return: o número, caso seja inteiro
     """
-    try:
-        n = input(txt)
-        if n.isnumeric():
-            n = int(n)
-        elif n.isnumeric() == False:
-            while True:
-                n = input('ERRO! DIGITE UMA IDADE VÁLIDA: ')
-                if n.isnumeric():
-                    n = int(n)
-                    break
-    except Exception as erro:
-        print(f'Tivemos um erro: {erro}')
-    except KeyboardInterrupt:
-        print('O usuário não quis digitar.')
-        return 0
-    else:
-        return n
+    while True:
+        try:
+            n = int(input(txt))  
+        except KeyboardInterrupt:
+            print('O usuário não quis digitar.')
+            return 0
+        except (ValueError, TypeError):
+            print('ERRO: digite uma idade válida!')
+            continue
+        else:
+            return n
